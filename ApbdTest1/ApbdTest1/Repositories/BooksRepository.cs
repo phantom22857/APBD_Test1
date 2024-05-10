@@ -139,7 +139,6 @@ public class BooksRepository : IBooksRepository
                 Title = reader.GetString(reader.GetOrdinal("BookTitle")),
                 Authors = new List<AuthorsDto>(),
                 Genres = new List<GenresDto>(),
-                PublishingHouses = new List<PublishingHousesDto>()
             };
         }
 
@@ -156,13 +155,7 @@ public class BooksRepository : IBooksRepository
             Name = reader.GetString(reader.GetOrdinal("GenreName"))
         });
 
-        bookDto.PublishingHouses.Add(new PublishingHousesDto()
-        {
-            Pk = reader.GetInt32(reader.GetOrdinal("PublishingHouseId")),
-            Name = reader.GetString(reader.GetOrdinal("PublishingHouseName")),
-            OwnerLastName = reader.GetString(reader.GetOrdinal("PublishingHouseOwnerLastName")),
-            OwnerFirstName = reader.GetString(reader.GetOrdinal("PublishingHouseOwnerFirstName"))
-        });
+        
     }
 
     if (bookDto is null) throw new Exception("Book not found");

@@ -17,8 +17,8 @@ public class PublishingHousesDto
     public int Pk { get; set; }
     public string Name { get; set; }= string.Empty;
     
-    [MaybeNull]
-    public string OwnerFirstName { get; set; }= string.Empty;
+    
+    public string? OwnerFirstName { get; set; }
     public string OwnerLastName { get; set; }= string.Empty;
 }
 
